@@ -1,10 +1,13 @@
-    IP=`wget -qO- eth0.me`
-    DISCORD=DISCORD1234    #<<< Bu kısım değişecek, Discord adınızı yazın
 
 
+**1-Değişkenleri tanımlayalım**
+```bash
+IP=`wget -qO- eth0.me`
+DISCORD=DISCORD1234    #<<< Bu kısım değişecek, Discord adınızı yazın
 
+```
 
-**Değişkenleri bash dosyasına kaydediyoruz.**
+**2-Değişkenleri bash dosyasına kaydediyoruz.**
 ```bash
 echo "export IP="${IP}"" >> $HOME/.bash_profile
 echo "export DISCORD="${DISCORD}"" >> $HOME/.bash_profile
@@ -12,7 +15,7 @@ source $HOME/.bash_profile
 
 ```
 
-**Güncelleme ve gereksinimleri yüklüyoruz**
+**3-Güncelleme ve gereksinimleri yüklüyoruz**
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -21,14 +24,14 @@ sudo apt install curl build-essential gcc make -y
 ```
 
 
-**Rustu Yüklüyoruz**
+**4-Rustu Yüklüyoruz**
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 source ~/.cargo/env
 ```
 
 
-**Bazuka kurulumuna başlıyoruz**
+**5-Bazuka kurulumuna başlıyoruz**
 
 ```bash
 cd # ana dizine çıktık
@@ -40,7 +43,7 @@ cargo install --path .   #noktayı unutma
 
 
 
-**Bazukayı init edelim**
+**6-Bazukayı init edelim**
 
 ```bash
 cd
@@ -50,7 +53,7 @@ bazuka init --seed "BURAYA SENIN KELIMELERIN" --network chaos --node 127.0.0.1:8
 
 
 
-**Servis dosyası oluşturuyoruz, bu kodları tek seferde kopyalayın**
+**7-Servis dosyası oluşturuyoruz, bu kodları tek seferde kopyalayın**
 
 ```bash
 sudo tee <<EOF >/dev/null /etc/systemd/system/zeekad.service
