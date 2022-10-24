@@ -3,7 +3,7 @@
 **1-Değişkenleri tanımlayalım**
 ```bash
 IP=`wget -qO- eth0.me`
-DISCORD=DISCORD1234    #<<< Bu kısım değişecek, Discord adınızı yazın
+DISCO=DISCORD1234    #<<< Bu kısım değişecek, Discord adınızı yazın
 
 ```
 
@@ -62,7 +62,7 @@ Description=Zeeka node
 After=network.target
 [Service]
 User=$USER
-ExecStart=`RUST_LOG=info which bazuka` node --listen 0.0.0.0:8765 --external $IP:8765 --network chaos --db /root/.bazuka-chaos --bootstrap 195.201.222.205:8765 --bootstrap 34.132.176.19:8765 --discord-handle "$DISCORD"
+ExecStart=`RUST_LOG=info which bazuka` node --listen 0.0.0.0:8765 --external $IP:8765 --network chaos --db /root/.bazuka-chaos --bootstrap 195.201.222.205:8765 --bootstrap 34.132.176.19:8765 --discord-handle "$DISCO"
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
